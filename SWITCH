@@ -1,0 +1,11 @@
+// 1. Find all title elements on the page
+const titleElements = document.querySelectorAll('.text-title');
+
+// 2. Loop through them and print each one
+console.log('📋 Properties found:');
+titleElements.forEach((el, i) => {
+  console.log(`${i + 1}. ${el.textContent.trim()}`);
+});
+
+// 3. Show how many we got
+console.log(`✅ Total: ${titleElements.length} properties`);

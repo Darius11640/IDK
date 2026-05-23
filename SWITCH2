@@ -1,0 +1,13 @@
+// Your XPaths (for title and price inside any listing card)
+let titles = $x('//*[starts-with(@id, "listing-")]/div/div/div/div[2]/div[1]/div[1]');
+let prices = $x('//*[starts-with(@id, "listing-")]/div/div/div/div[2]/div[2]');
+
+// Show first x (or less)
+let count = Math.min(titles.length, prices.length, 1);
+
+console.log('🏠 First ' + count + ' listings:');
+for (let i = 0; i < count; i++) {
+  let title = titles[i].textContent.trim();
+  let price = prices[i].textContent.trim().split('\n')[0];  // only first line
+  console.log((i+1) + '. ' + title + ' – ' + price);
+}
